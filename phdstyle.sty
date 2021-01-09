@@ -1,0 +1,109 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{phdstyle}[2021/01/09 Custom LaTeX style]
+
+%%% PACKAGES
+
+%% Standalone
+\RequirePackage{standalone}
+
+%% Encoding
+\RequirePackage[utf8]{inputenc} % encoding for the input of the document
+\RequirePackage[T1]{fontenc} % encoding on the fonts
+
+%% Mathematics
+\RequirePackage{mathptmx}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}    % Extra symbols
+\RequirePackage{amsthm}     % Theorem-like environments
+\RequirePackage{thmtools}   % Theorem-like environments, extends amsthm
+\RequirePackage{mathtools}  % Fonts and environments for mathematical formulae
+\RequirePackage{mathrsfs}   % Script font with \mathscr{}
+\RequirePackage{dsfont}     % Double stroke font with \mathds{}
+\RequirePackage{cancel}     % Cancel terms with \cancel, \bcancel or \xcancel
+\RequirePackage{stmaryrd}   % Brackets
+\everymath
+{
+    \ifodd\value{page}          % Allow multiline equations
+        \allowdisplaybreaks[1]  % to break across two pages:
+        \else                   % - Breaks from odd to even pages are allowed,
+        \allowdisplaybreaks[4]  %   but discouraged.
+    \fi                         % - Breaks from even to odd pages are allowed.
+}
+
+%% Language
+\RequirePackage[estonian,english]{babel} % multilingual support for tex
+
+%%% Fonts and dimensions
+\renewcommand{\sfdefault}{phv}
+\setlength\topmargin{-2.5mm}
+\setlength\headheight{0mm}
+\setlength\headsep{0mm}
+\setlength\textheight{43\baselineskip}
+\setlength\footskip{13.5mm}
+\setlength\textwidth{125mm}
+\setlength\oddsidemargin{\paperwidth}
+\addtolength\oddsidemargin{-\textwidth}
+\setlength\oddsidemargin{0.5\oddsidemargin}
+\addtolength\oddsidemargin{-1in}
+\setlength\evensidemargin{\oddsidemargin}
+
+%% Organising tools
+\RequirePackage{color}
+\RequirePackage{cite}
+
+%% Cross references and links
+\RequirePackage{url}
+\RequirePackage[bookmarks,colorlinks,
+  linkcolor=black,citecolor=black,filecolor=black,urlcolor=black,
+  pdfhighlight=/O,pdfstartview=FitH,unicode]{hyperref}
+
+%% USER-DEFINED MACROS 
+
+%% Operators
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rank}{rank}
+
+
+%% Delimiters
+\DeclarePairedDelimiter{\p}{\lparen}{\rparen}          % Parenthesis
+\DeclarePairedDelimiter{\set}{\lbrace}{\rbrace}        % Set
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}          % Absolute value
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}         % Norm
+\DeclarePairedDelimiter{\ip}{\langle}{\rangle}         % Inner product, ideal
+\DeclarePairedDelimiter{\sqb}{\lbrack}{\rbrack}        % Square brackets
+\DeclarePairedDelimiter{\ssqb}{\llbracket}{\rrbracket} % Double brackets
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}         % Ceiling
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}      % Floor
+
+
+%% Blackboard bold
+\newcommand{\N}{\mathbb{N}}    % Natural numbers
+\newcommand{\Z}{\mathbb{Z}}    % Integers
+\newcommand{\Q}{\mathbb{Q}}    % Rational numbers
+\newcommand{\R}{\mathbb{R}}    % Real numbers
+% \newcommand{\C}{\mathbb{C}}  % Complex numbers
+\newcommand{\A}{\mathbb{A}}    % Affine space
+\renewcommand{\P}{\mathbb{P}}  % Projective space
+
+
+%% Bold face
+\renewcommand{\a}{\mathbf{a}}
+\renewcommand{\b}{\mathbf{b}}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\0}{\mathbf{0}}
+\newcommand{\1}{\mathbf{1}}
+
+
+%% Miscellaneous
+\renewcommand{\qedsymbol}{\(\blacksquare\)}
+\newcommand{\arxiv}[1]{arXiv:\space\href{http://arxiv.org/abs/#1}{#1}\xspace}
+\newcommand{\ie}{\leavevmode\unskip, i.e.,\xspace}
+\newcommand{\eg}{\leavevmode\unskip, e.g.,\xspace}
+\newcommand{\dash}{\textthreequartersemdash\xspace}
+\newcommand{\TikZ}{Ti\textit{k}Z\xspace}
+\newcommand{\matlab}{\textsc{Matlab}\xspace}
+
+\endinput

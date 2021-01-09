@@ -1,0 +1,111 @@
+\documentclass{phdati}
+\usepackage{phdstyle}
+
+%
+\ThesisType{COLLECTION} % Possible values: MONOGRAPH, COLLECTION             
+
+%
+\author{Firstname Lastname}
+\title{Dissertation Title}
+
+%
+\institute{Institute of Computer Science}
+\faculty{Faculty of Science and Technology}
+\affiliation{University of Tartu} % TODO: should it be possible for secondary affiliations?
+
+%
+\ISSN{1024-4212}           % Request correct number from ??@ut.ee
+\ISBNPRINT{978-9949-XX-XXX-X} % ISBN print, Request correct number from ??@ut.ee
+\ISBNPDF{978-9949-XX-XXX-X} % ISBN PDF, Request correct number from ??@ut.ee
+
+%
+\dissertationseries{XX}  % Request correct number from ??@ut.ee
+\thesisfield{Computer Science}
+\commencementdate{XXX, 20XX} % Example: June, 2020
+\defensedate{XX, 20XX} % Example: 01, 2020
+\defensetime{XX:XX} % Example: 10:15
+\defenseloc{XXX} % Example: Narva mnt 18-322
+
+%
+\supervisor{
+    Prof. & Firstname Lastname\\
+    & Address\\
+    & Address
+}
+
+\opponents{
+    Prof. Dr.& Firstname Lastname\\
+    &Address\\
+    &Address\\
+    &Address\\
+    \\
+    Prof. & Firstname Lastname\\
+    &Address\\
+    &Address
+}
+
+% to remove a chapter you can easily comment out from the following list
+\includeonly
+{
+    sections/dedication,
+    sections/abstract,
+    sections/listofpublications,
+    sections/preface,
+    sections/introduction,
+    sections/chapterI,
+    sections/chapterII,
+    sections/conclusion,
+    sections/appendixA,
+    sections/appendixB,
+    sections/acknowledge,
+    sections/sisukokkuvote,
+    sections/publications,
+    sections/cv,
+    sections/elulookirjeldus,
+    sections/chapterpublications, % only for a monograph
+}
+
+\begin{document}
+    \maketitle
+    \setcounter{page}{5} % Roman number in the beginning then Arabic?
+    \include{sections/dedication}
+    \include{sections/abstract}
+    
+    %
+    \tableofcontents
+    \listoffigures
+    \listoftables
+    \chapter*{List of abbreviations}
+    \IfThesisTypeIsCollection{\include{sections/listofpublications}}{}
+    
+    %
+    \include{sections/preface}
+    \include{sections/introduction}
+    
+    % body
+    \include{sections/chapterI}
+    \include{sections/chapterII}
+    
+    % conclusion
+    \include{sections/conclusion}
+    
+    % bibliography
+    \nocite{*} % NB: remove this, fill in the bibliography.bib, and cite it in your text
+    \bibliography{bibliography.bib}
+
+    %
+    \appendix
+    \include{sections/appendixA}
+    \include{sections/appendixB}
+    
+    %
+    \setcounter{secnumdepth}{-1}
+    \include{sections/acknowledge}
+    \include{sections/sisukokkuvote} % summary in Estonian
+    \IfThesisTypeIsCollection{\include{sections/publications}}{}
+    
+    % curriculum vitae
+    \include{sections/cv} % English
+    \include{sections/elulookirjeldus} % Estonian
+    \IfThesisTypeIsCollection{}{\include{sections/chapterpublications}}
+\end{document}
