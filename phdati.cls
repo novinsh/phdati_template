@@ -47,14 +47,15 @@
 \newcommand{\defensedate}[1]{ \def \phdati@defensedate{#1} }
 \newcommand{\defensetime}[1]{ \def \phdati@defensetime{#1} }
 \newcommand{\defenseloc}[1]{ \def \phdati@defenseloc{#1} }
+\newcommand{\addSup}[2]{ \def \phdati@supTitle{#1} \def \phdati@supDetail{#2} }
+\newcommand{\addOpp}[2]{ \def \phdati@oppTitle{#1} \def \phdati@oppDetail{#2} }
 \thesisfield{}
 \commencementdate{}
 \defensedate{}
 \defensetime{}
 \defenseloc{}
-
-\newcommand{\supervisor}[1]{ \def \phdati@supervisor{#1} }
-\newcommand{\opponents}[1]{ \def \phdati@opponents{#1} }
+\addSup{}{}
+\addOpp{}{}
 
 %%% Title
 \renewcommand*{\maketitle}
@@ -85,16 +86,18 @@
         Doctor of Philosophy (PhD) in {\phdati@thesisfield} on {\phdati@commencementdate} by the Council of
         the {\phdati@inst}, {\phdati@affiliation}.
         
-        \emph{Supervisor}
+        % supervisor(s)
+        \emph{\phdati@supTitle}
         
         \begin{tabular}{p{20mm}l}
-            \phdati@supervisor
+            \phdati@supDetail
         \end{tabular}
         
-        \emph{Opponents}
+        % opponents
+        \emph{\phdati@oppTitle}
         
         \begin{tabular}{p{20mm}l}
-            \phdati@opponents
+            \phdati@oppDetail
         \end{tabular}
         
         The public defense will take place on {\phdati@defensedate} at {\phdati@defensetime} in {\phdati@defenseloc{}}.
