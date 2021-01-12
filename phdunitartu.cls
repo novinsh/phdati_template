@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{phdati}[2018/07/13 v1.2]
+\ProvidesClass{phdunitartu}[2018/07/13 v1.2]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions
@@ -12,20 +12,22 @@
 %%% Utilities
 
 %% thesis type selector, the command \ThesisType needs to be set before
-\newcommand{\ThesisType}[1]{\def \phdati@ThesisType{#1}}
+\newcommand{\ThesisType}[1]{\def \phdunitartu@ThesisType{#1}}
 
 \DeclareRobustCommand{\IfThesisTypeIsCollection}[2]{%
-  \ifthenelse{\equal{\phdati@ThesisType}{COLLECTION}}{#1}{%
-    \ifthenelse{\equal{\phdati@ThesisType}{MONOGRAPH}}{#2}{\centering Undefined Thesis Type (Avail types: MONOGRAPH, COLLECTION)}}}
+  \ifthenelse{\equal{\phdunitartu@ThesisType}{COLLECTION}}{#1}{%
+    \ifthenelse{\equal{\phdunitartu@ThesisType}{MONOGRAPH}}{#2}{\centering Undefined Thesis Type (Avail types: MONOGRAPH, COLLECTION)}}}
 
 %% Specify dissertation series number
-\newcommand{\dissertationseries}[1]{ \def \phdati@dissertationseries{#1} }
-\dissertationseries{}
+\newcommand{\dissertationseriesname}[1]{ \def \phdunitartu@dissertationseriesname{#1} }
+\newcommand{\dissertationseriesnumber}[1]{ \def \phdunitartu@dissertationseriesnumber{#1} }
+\dissertationseriesname{}
+\dissertationseriesnumber{}
 
 %% Specify International Standard Serial/Book Number
-\newcommand{\ISSN}[1]{ \def \phdati@ISSN{ISSN\space#1}}
-\newcommand{\ISBNPRINT}[1]{ \def \phdati@ISBNA{ISBN\space#1\space(print)}}
-\newcommand{\ISBNPDF}[1]{ \def \phdati@ISBNB{ISBN\space#1\space(PDF)}}
+\newcommand{\ISSN}[1]{ \def \phdunitartu@ISSN{ISSN\space#1}}
+\newcommand{\ISBNPRINT}[1]{ \def \phdunitartu@ISBNA{ISBN\space#1\space(print)}}
+\newcommand{\ISBNPDF}[1]{ \def \phdunitartu@ISBNB{ISBN\space#1\space(PDF)}}
 \ISSN{Do not forget the ISSN}
 \ISBNPRINT{Do not forget to insert the ISBN}
 \ISBNPDF{Do not forget to insert the ISBN}
@@ -33,22 +35,22 @@
 
 %% Specify affiliation
 % TODO: to follow UT's Organizational Structure make it possible to use \college instead of \institute 
-\newcommand{\institute}[1]{ \def \phdati@inst{#1} }
-\newcommand{\faculty}[1]{ \def \phdati@faculty{#1} }
-\newcommand{\affiliation}[1]{ \def \phdati@affiliation{#1} }
+\newcommand{\institute}[1]{ \def \phdunitartu@inst{#1} }
+\newcommand{\faculty}[1]{ \def \phdunitartu@faculty{#1} }
+\newcommand{\affiliation}[1]{ \def \phdunitartu@affiliation{#1} }
 \institute{} 
 \faculty{}
 \affiliation{}
 
 %% Thesis submission details
 % TODO: to follow UT's Organizational Structure make it possible to use \college instead of \institute 
-\newcommand{\thesisfield}[1]{ \def \phdati@thesisfield{#1} }
-\newcommand{\commencementdate}[1]{ \def \phdati@commencementdate{#1} }
-\newcommand{\defensedate}[1]{ \def \phdati@defensedate{#1} }
-\newcommand{\defensetime}[1]{ \def \phdati@defensetime{#1} }
-\newcommand{\defenseloc}[1]{ \def \phdati@defenseloc{#1} }
-\newcommand{\addSup}[2]{ \def \phdati@supTitle{#1} \def \phdati@supDetail{#2} }
-\newcommand{\addOpp}[2]{ \def \phdati@oppTitle{#1} \def \phdati@oppDetail{#2} }
+\newcommand{\thesisfield}[1]{ \def \phdunitartu@thesisfield{#1} }
+\newcommand{\commencementdate}[1]{ \def \phdunitartu@commencementdate{#1} }
+\newcommand{\defensedate}[1]{ \def \phdunitartu@defensedate{#1} }
+\newcommand{\defensetime}[1]{ \def \phdunitartu@defensetime{#1} }
+\newcommand{\defenseloc}[1]{ \def \phdunitartu@defenseloc{#1} }
+\newcommand{\addSup}[2]{ \def \phdunitartu@supTitle{#1} \def \phdunitartu@supDetail{#2} }
+\newcommand{\addOpp}[2]{ \def \phdunitartu@oppTitle{#1} \def \phdunitartu@oppDetail{#2} }
 \thesisfield{}
 \commencementdate{}
 \defensedate{}
@@ -62,8 +64,8 @@
 {
     \begin{titlepage}
         % == title pages ==
-        \def\seriesname{Dissertationes informaticae Universitatis Tartuensis}
-        \def\seriesnumber{\phdati@dissertationseries}
+        \def\seriesname{\phdunitartu@dissertationseriesname}
+        \def\seriesnumber{\phdunitartu@dissertationseriesnumber}
         \pagestyle{empty}\begingroup\centering\sffamily
         \vbox{\small\MakeUppercase{\seriesname}}
         \vbox{\bfseries\small\seriesnumber}
@@ -80,38 +82,38 @@
         
         % == reverse of title page ==
         \begingroup\setlength\parindent{0pt}\setlength\parskip\baselineskip
-        \phdati@inst, \phdati@faculty, \phdati@affiliation, Estonia.
+        \phdunitartu@inst, \phdunitartu@faculty, \phdunitartu@affiliation, Estonia.
         
         Dissertation has been accepted for the commencement of the degree of
-        Doctor of Philosophy (PhD) in {\phdati@thesisfield} on {\phdati@commencementdate} by the Council of
-        the {\phdati@inst}, {\phdati@affiliation}.
+        Doctor of Philosophy (PhD) in {\phdunitartu@thesisfield} on {\phdunitartu@commencementdate} by the Council of
+        the {\phdunitartu@inst}, {\phdunitartu@affiliation}.
         
         % supervisor(s)
-        \emph{\phdati@supTitle}
+        \emph{\phdunitartu@supTitle}
         
         \begin{tabular}{p{20mm}l}
-            \phdati@supDetail
+            \phdunitartu@supDetail
         \end{tabular}
         
         % opponents
-        \emph{\phdati@oppTitle}
+        \emph{\phdunitartu@oppTitle}
         
         \begin{tabular}{p{20mm}l}
-            \phdati@oppDetail
+            \phdunitartu@oppDetail
         \end{tabular}
         
-        The public defense will take place on {\phdati@defensedate} at {\phdati@defensetime} in {\phdati@defenseloc{}}.
+        The public defense will take place on {\phdunitartu@defensedate} at {\phdunitartu@defensetime} in {\phdunitartu@defenseloc{}}.
         
-        The publication of this dissertation was financed by the {\phdati@inst}, {\phdati@affiliation}.
+        The publication of this dissertation was financed by the {\phdunitartu@inst}, {\phdunitartu@affiliation}.
         
         \vfill
         Copyright \textcopyright\ \the\year\ by \@author
         
         % International Standard Serial/Book Number 
         % TODO: if empty then do not print anything without issuing a warning perhaps!
-        \phdati@ISSN\\
-        \phdati@ISBNA\\
-        \phdati@ISBNB
+        \phdunitartu@ISSN\\
+        \phdunitartu@ISBNA\\
+        \phdunitartu@ISBNB
         
         University of Tartu Press\\
         \url{http://www.tyk.ee/}

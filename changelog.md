@@ -12,4 +12,4 @@ All notable changes to this project will be documented in this file.
 - all the thesis details were put into series of commands that must be set from main.tex, minimizing unintentional formatting changes as well as better readability
 - restructured the chapters and sections of the document by breaking it into a separate directory and giving easier and better control over activating or deactiving each section from the main.tex
 - created a directory for the figures which university logo resides in by default
-- added a user defined macros in the phdstyle.sty that is adopted from [this template](#)
+- added a user defined macros in the phdstyle.sty that is adopted from [this template](https://github.com/martinhelso/phduio)

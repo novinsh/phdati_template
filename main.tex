@@ -1,26 +1,26 @@
-\documentclass{phdati}
+\documentclass{phdunitartu}
 \usepackage{phdstyle}
 
 %
 \ThesisType{COLLECTION} % Possible values: MONOGRAPH, COLLECTION             
-
 %
 \author{Firstname Lastname}
 \title{Dissertation Title}
 
 %
-\institute{Institute of Computer Science}
-\faculty{Faculty of Science and Technology}
-\affiliation{University of Tartu} % TODO: should it be possible for secondary affiliations?
+\institute{Institute of Computer Science} % Replace with your institute/college
+\faculty{Faculty of Science and Technology} % Replace with your Faculty
+\affiliation{University of Tartu} 
 
 %
-\ISSN{1024-4212}           % Request correct number from ??@ut.ee
-\ISBNPRINT{978-9949-XX-XXX-X} % ISBN print, Request correct number from ??@ut.ee
-\ISBNPDF{978-9949-XX-XXX-X} % ISBN PDF, Request correct number from ??@ut.ee
+\ISSN{1024-4212}           % will be provided by UT Press
+\ISBNPRINT{978-9949-XX-XXX-X} % ISBN print, will be provided by UT Press
+\ISBNPDF{978-9949-XX-XXX-X} % ISBN PDF, will be provided by UT Press
 
 %
-\dissertationseries{XX}  % Request correct number from ??@ut.ee
-\thesisfield{Computer Science}
+\dissertationseriesname{Dissertationes informaticae Universitatis Tartuensis}  % will be provided by UT Press
+\dissertationseriesnumber{XX}  % will be provided by UT Press
+\thesisfield{Computer Science} % Replace with your field
 \commencementdate{XXX, 20XX} % Example: June, 2020
 \defensedate{XX, 20XX} % Example: 01, 2020
 \defensetime{XX:XX} % Example: 10:15
@@ -68,8 +68,9 @@
 
 \begin{document}
     \maketitle
-    \setcounter{page}{5} % Roman number in the beginning then Arabic?
+    \thispagestyle{empty}
     \include{sections/dedication}
+    \setcounter{page}{6}
     \include{sections/abstract}
     
     %
