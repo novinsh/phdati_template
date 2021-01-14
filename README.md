@@ -4,7 +4,7 @@ The package contains template files for PhD students writing their doctoral thes
 	
 ### Contents
 
-- phdati.cls: A LaTeX class file for both monograph and collection of publications type of theses;
+- phdunitartu.cls: A LaTeX class file for both monograph and collection of publications type of theses;
 - phdstyle.sty: A LaTeX style file for both monograph and collection of publications type of theses;
 - main.tex: The main file for the LaTeX template with the thesis details need to be filled here;
 - bibliography.bib: A Latex file for the bibliography 

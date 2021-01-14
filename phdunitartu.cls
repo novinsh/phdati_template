@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{phdunitartu}[2018/07/13 v1.2]
+\ProvidesClass{phdunitartu}[2021/01/14 v1.3]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions
@@ -266,7 +266,6 @@
 
 %%% Bibliography
 
-\bibliographystyle{plain}
 \def\@openbib@code{\addcontentsline{toc}{chapter}{Bibliography}}
 
 %%% Lists
