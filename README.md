@@ -1,4 +1,4 @@
-# ATI Doctoral Thesis Template Package
+# Doctoral Thesis Template Package
 
 The package contains template files for PhD students writing their doctoral thesis.
 	
@@ -33,4 +33,7 @@ A conclusion, a bibliography list and an exhaustive summary of the thesis in Est
 
 
 ### Authors
-The LaTeX class file and templates have been created by Reimo Palm, following the traditions of the Institute of Computer Science of UT and guidelines of UT Press.
+The LaTeX class file and the template have been created by Reimo Palm with some modifications by the Institute of Computer Science of UT following the guidelines of UT Press. 
+Last modified: 2021/01/14 v1.3 
+Contact: ics@ut.ee
+
