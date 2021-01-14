@@ -1,5 +1,6 @@
-# Doctoral Thesis Template Package
+# UniTartu Doctoral Thesis Template Package
 
+[![University of Tartu](figures/tartu_ylikool_logo-e1589353961210.png)](https://ut.ee)
 The package contains template files for PhD students writing their doctoral thesis.
 	
 ### Contents
@@ -34,6 +35,8 @@ A conclusion, a bibliography list and an exhaustive summary of the thesis in Est
 
 ### Authors
 The LaTeX class file and the template have been created by Reimo Palm with some modifications by the Institute of Computer Science of UT following the guidelines of UT Press. 
+
 Last modified: 2021/01/14 v1.3 
+
 Contact: ics@ut.ee
 
