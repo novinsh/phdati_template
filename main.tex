@@ -53,12 +53,17 @@
     &Address
 }
 
+%
+\addbibresource{bibliographies/publications.bib} % your publication
+\addbibresource{bibliographies/bibliography.bib} % any other bibliography
+
 % to remove a chapter you can easily comment out from the following list
 \includeonly
 {
     sections/dedication,
     sections/abstract,
     sections/listofpublications,
+    sections/abbreviations,
     sections/preface,
     sections/introduction,
     sections/chapterI,
@@ -85,7 +90,7 @@
     \tableofcontents
     \listoffigures
     \listoftables
-    \chapter*{List of abbreviations}
+    \include{sections/abbreviations}
     \IfThesisTypeIsCollection{\include{sections/listofpublications}}{}
     
     %
@@ -100,9 +105,11 @@
     \include{sections/conclusion}
     
     % bibliography
-    \nocite{*} % NB: remove this, fill in the bibliography.bib and use \cite in your text in order for your citations to show up in this section
-    % you can change the bibliography style for example to apalike from the phdstyle.sty file, bibliography section
-    \bibliography{bibliography.bib}
+    % \nocite{*} % NB: remove this, fill in the bibliography.bib and use \cite in your text in order for your citations to show up in this section
+    % you can change the bibliography style from the phdstyle.sty file, bibliography section
+    \nocite{*}
+    \printbibliography
+    % \bibliography{bibliography.bib}
 
     %
     \appendix
