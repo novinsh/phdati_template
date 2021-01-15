@@ -1,5 +1,8 @@
+% do not forget to include the appropriate keywords: included for your publication that you included in the thesis, excluded those that were not included and other as other the former and latter.
+% more example of entries look here: https://verbosus.com/bibtex-style-examples.html
+
 @article{paper1,
-    author =       "First Author, Second Author, Third Author",
+    author =       "\textbf{First Author} and Second Author and Third Author",
     title =        "Title of the Journal Paper I",
     journal =      "Name of the Journal",
     volume =       "322",
@@ -7,11 +10,11 @@
     pages =        "891--921",
     year =         "1905",
     DOI =          "http://dx.doi.org/10.1002/andp.19053221004",
-    keywords =     "included,physics"
+    keywords =     "included, physics"
 }
 
 @article{paper2,
-    author =       "First Author, Second Author, Third Author",
+    author =       "First Author and \textbf{Second Author} and Third Author",
     title =        "Title of the Journal Paper II",
     journal =      "Name of the Journal",
     volume =       "322",
@@ -19,19 +22,83 @@
     pages =        "891--921",
     year =         "1905",
     DOI =          "http://dx.doi.org/10.1002/andp.19053221004",
-    keywords =     "included,physics"
+    keywords =     "included, physics"
 }
 
-@inproceedings{paper3,
-  author =       {Singaravelu, Lenin and Pu, Calton and H{\"a}rtig, Hermann and Helmuth, Christian},
-  title =        {Reducing TCB complexity for security-sensitive applications: three case studies},
-  crossref =     {eurosys:06},
-  pages =        {161--174},
-  doi =          {10.1145/1217935.1217951},
-  keywords =     {included, application security, trusted computing base},
+@conference{paper3,
+  author       =  {First Author and Second Author and \textbf{Third Author}},
+  title        = {Title of the Conference Paper},
+  year         = 1993,
+  editor       = {The editor},
+  volume       = 4,
+  series       = 5,
+  pages        = 213,
+  address      = {The address of the publisher},
+  month        = 7,
+  organization = {The organization},
+  publisher    = {The publisher},
+  note         = {An optional note}, 
+  keywords     = {included, keyword2, keyword3}
+
 }
 
-@online{knuthwebsite,
+@conference{paper4,
+  author       =  {First Author and Second Author and \textbf{Third Author}},
+  title        = {Title of the Conference Paper},
+  year         = 1993,
+  editor       = {The editor},
+  volume       = 4,
+  series       = 5,
+  pages        = 213,
+  address      = {The address of the publisher},
+  month        = 7,
+  organization = {The organization},
+  publisher    = {The publisher},
+  note         = {An optional note},
+  keywords     = {included, keyword2, keyword3}
+}
+
+@conference{paper5,
+  author       =  {First Author and Second Author and \textbf{Third Author}},
+  title        = {Title of the Conference Paper},
+  year         = 1993,
+  editor       = {The editor},
+  volume       = 4,
+  series       = 5,
+  pages        = 213,
+  address      = {The address of the publisher},
+  month        = 7,
+  organization = {The organization},
+  publisher    = {The publisher},
+  note         = {An optional note},
+  keywords     = {included, keyword2, keyword3}
+}
+
+@article{paper6,
+    author =       "First Author and \textbf{Second Author} and Third Author",
+    title =        "Title of the Journal Paper II",
+    journal =      "Name of the Journal",
+    volume =       "322",
+    number =       "10",
+    pages =        "891--921",
+    year =         "1905",
+    DOI =          "http://dx.doi.org/10.1002/andp.19053221004",
+    keywords =     "excluded, physics"
+}
+
+@article{paper7,
+    author =       "First Author and \textbf{Second Author} and Third Author",
+    title =        "Title of the Journal Paper II",
+    journal =      "Name of the Journal",
+    volume =       "322",
+    number =       "10",
+    pages =        "891--921",
+    year =         "1905",
+    DOI =          "http://dx.doi.org/10.1002/andp.19053221004",
+    keywords =     "excluded, physics"
+}
+
+@online{paper8,
     author    = "\textbf{First Author}{,} Second Author{,} Third Author",
     title     = "Title of the Paper",
     url       = "http://www-cs-faculty.stanford.edu/~uno/abcde.html",

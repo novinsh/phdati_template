@@ -55,16 +55,35 @@
 
 %% Bibliography
 \usepackage[backend=biber,
-            style=numeric, % possible options: numeric, alphabetic, for more options refer to https://www.overleaf.com/learn/latex/biblatex_citation_styles
-            defernumbers=true,
+            style=alphabetic, % possible options: numeric, alphabetic, for more options refer to https://www.overleaf.com/learn/latex/biblatex_citation_styles
+            defernumbers=true, % necessary for the roman numerals on the list of publications
             refsection=section]
             {biblatex}
-
+            
+% Roman numerals for the list of the publications: https://tex.stackexchange.com/questions/299064/biblatex-two-bibliographies-with-different-styles-and-sortings
+\DeclareFieldFormat{Roman}{\RN{#1}}
+% The following definition is copied from numeric.bbx
+\defbibenvironment{roman-numerals}
+  {\list
+     {\printtext[labelnumberwidth]{%
+    \printfield{prefixnumber}%
+    \printfield[Roman]{labelnumber}}}
+     {\setlength{\labelwidth}{\labelnumberwidth}%
+      \setlength{\leftmargin}{\labelwidth}%
+      \setlength{\labelsep}{\biblabelsep}%
+      \addtolength{\leftmargin}{\labelsep}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{\hss##1}}
+  {\endlist}
+  {\item}
+  
+  
 % == drawing black boxes with numbers before publications ==
 \usepackage{tikz, blindtext}
 
 %% enumerating 
-\usepackage{enumerate}
+% \usepackage{enumerate}
 
 %% Cross references and links
 \RequirePackage{url}
@@ -111,33 +130,7 @@
 \newcommand{\1}{\mathbf{1}}
 
 
-%% Miscellaneous
-\renewcommand{\qedsymbol}{\(\blacksquare\)}
-\newcommand{\arxiv}[1]{arXiv:\space\href{http://arxiv.org/abs/#1}{#1}\xspace}
-\newcommand{\ie}{\leavevmode\unskip, i.e.,\xspace}
-\newcommand{\eg}{\leavevmode\unskip, e.g.,\xspace}
-\newcommand{\dash}{\textthreequartersemdash\xspace}
-\newcommand{\TikZ}{Ti\textit{k}Z\xspace}
-\newcommand{\matlab}{\textsc{Matlab}\xspace}
-
-\DeclareFieldFormat{Roman}{\RN{#1}}
-% The following definition is copied from numeric.bbx
-\defbibenvironment{roman-numerals}
-  {\list
-     {\printtext[labelnumberwidth]{%
-    \printfield{prefixnumber}%
-    \printfield[Roman]{labelnumber}}}
-     {\setlength{\labelwidth}{\labelnumberwidth}%
-      \setlength{\leftmargin}{\labelwidth}%
-      \setlength{\labelsep}{\biblabelsep}%
-      \addtolength{\leftmargin}{\labelsep}%
-      \setlength{\itemsep}{\bibitemsep}%
-      \setlength{\parsep}{\bibparsep}}%
-      \renewcommand*{\makelabel}[1]{\hss##1}}
-  {\endlist}
-  {\item}
-
-% glosseries
+%% Glossaries
 \RequirePackage{longtable}
 \RequirePackage[acronym]{glossaries}
 
@@ -161,5 +154,14 @@
 }
 
 \makeglossaries
+
+%% Miscellaneous
+\renewcommand{\qedsymbol}{\(\blacksquare\)}
+\newcommand{\arxiv}[1]{arXiv:\space\href{http://arxiv.org/abs/#1}{#1}\xspace}
+\newcommand{\ie}{\leavevmode\unskip, i.e.,\xspace}
+\newcommand{\eg}{\leavevmode\unskip, e.g.,\xspace}
+\newcommand{\dash}{\textthreequartersemdash\xspace}
+\newcommand{\TikZ}{Ti\textit{k}Z\xspace}
+\newcommand{\matlab}{\textsc{Matlab}\xspace}
 
 \endinput
