@@ -33,6 +33,7 @@
 
 %% Language
 \RequirePackage[estonian,english]{babel} % multilingual support for tex
+\RequirePackage{csquotes}
 
 %%% Fonts and dimensions
 \renewcommand{\sfdefault}{phv}
@@ -50,10 +51,20 @@
 
 %% Organising tools
 \RequirePackage{color}
-\RequirePackage{cite}
+% \RequirePackage{cite}
 
 %% Bibliography
-\bibliographystyle{plain} % possible options: plain, apalike, alpha
+\usepackage[backend=biber,
+            style=numeric, % possible options: numeric, alphabetic, for more options refer to https://www.overleaf.com/learn/latex/biblatex_citation_styles
+            defernumbers=true,
+            refsection=section]
+            {biblatex}
+
+% == drawing black boxes with numbers before publications ==
+\usepackage{tikz, blindtext}
+
+%% enumerating 
+\usepackage{enumerate}
 
 %% Cross references and links
 \RequirePackage{url}
@@ -108,5 +119,47 @@
 \newcommand{\dash}{\textthreequartersemdash\xspace}
 \newcommand{\TikZ}{Ti\textit{k}Z\xspace}
 \newcommand{\matlab}{\textsc{Matlab}\xspace}
+
+\DeclareFieldFormat{Roman}{\RN{#1}}
+% The following definition is copied from numeric.bbx
+\defbibenvironment{roman-numerals}
+  {\list
+     {\printtext[labelnumberwidth]{%
+    \printfield{prefixnumber}%
+    \printfield[Roman]{labelnumber}}}
+     {\setlength{\labelwidth}{\labelnumberwidth}%
+      \setlength{\leftmargin}{\labelwidth}%
+      \setlength{\labelsep}{\biblabelsep}%
+      \addtolength{\leftmargin}{\labelsep}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{\hss##1}}
+  {\endlist}
+  {\item}
+
+% glosseries
+\RequirePackage{longtable}
+\RequirePackage[acronym]{glossaries}
+
+% abbreviations:
+\newacronym{ny}{NY}{New York}
+\newacronym{la}{LA}{Los Angeles}
+\newacronym{un}{UN}{United Nations}
+
+% nomenclature:
+\newglossaryentry{angelsperarea}{
+  name = $a$ ,
+  description = The number of angels per unit area,
+}
+\newglossaryentry{numofangels}{
+  name = $N$ ,
+  description = The number of angels per needle point
+}
+\newglossaryentry{areaofneedle}{
+  name = $A$ ,
+  description = The area of the needle point
+}
+
+\makeglossaries
 
 \endinput
