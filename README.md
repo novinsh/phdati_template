@@ -36,6 +36,13 @@ A conclusion, a bibliography list and an exhaustive summary of the thesis in Est
 ### Authors
 The LaTeX class file and the template have been created by Reimo Palm with some modifications by the Institute of Computer Science of UT following the guidelines of UT Press. 
 
+- Reimo Palm
+- Dmytro Fishman
+- Novin Sharoudi
+- Kalmer Apinis
+- Jaak Vilo -- vilo@ut.ee 
+- Institute -- ics@ut.ee
+
 Last modified: 2021/01/14 v1.3 
 
 Contact: ics@ut.ee
