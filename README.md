@@ -38,7 +38,7 @@ The LaTeX class file and the template have been created by Reimo Palm with some 
 
 - Reimo Palm
 - Dmytro Fishman
-- Novin Sharoudi
+- Novin Shahroudi
 - Kalmer Apinis
 - Jaak Vilo -- vilo@ut.ee 
 - Institute -- ics@ut.ee
